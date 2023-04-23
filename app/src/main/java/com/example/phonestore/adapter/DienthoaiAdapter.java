@@ -1,0 +1,133 @@
+package com.example.phonestore.adapter;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.phonestore.R;
+import com.example.phonestore.model.Sanpham;
+import com.squareup.picasso.Picasso;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class DienthoaiAdapter extends BaseAdapter {
+    ArrayList<Sanpham> sanphamArrayList;
+    Context context;
+    private Filter sachFilter;
+    ArrayList<Sanpham> arrSortSach;
+    public DienthoaiAdapter(Context context,ArrayList<Sanpham> arr)
+    {
+        this.sanphamArrayList=arr;
+        this.context=context;
+    }
+    @Override
+    public int getCount() {
+        return sanphamArrayList.size();
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return sanphamArrayList.get(i);
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+    public class ViewHolderDT{
+        public TextView txttendienthoai,txtgiadienthoai,txtmotadienthoai;
+        public ImageView imgdienthoai;
+    }
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        ViewHolderDT viewHolderDT=null;
+        if(view==null)
+        {
+            viewHolderDT=new ViewHolderDT();
+            LayoutInflater inflater=(LayoutInflater)
+            context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view=inflater.inflate(R.layout.item_dienthoai,null);
+            viewHolderDT.txttendienthoai=view.findViewById(R.id.textviewdienthoai);
+            viewHolderDT.txtgiadienthoai=view.findViewById(R.id.textviewgiadienthoai);
+            //viewHolderDT.txtmotadienthoai=view.findViewById(R.id.textviewmotadienthoai);
+            viewHolderDT.imgdienthoai=view.findViewById(R.id.imageviewdienthoai);
+            view.setTag(viewHolderDT);
+        }
+        else
+        {
+            viewHolderDT=(ViewHolderDT)view.getTag();
+        }
+        //xu ly du lieu
+        Sanpham sanpham=(Sanpham) getItem(i);
+        viewHolderDT.txttendienthoai.setText(sanpham.getTensanpham());
+        //dinh dang phan gia
+        DecimalFormat decimalFormat=new DecimalFormat("###,###,###");
+        viewHolderDT.txtgiadienthoai.setText("Giá: "
+                +decimalFormat.format(sanpham.getGiasanpham()));
+        //chi cho hien thi chi tiet 2 dong
+       // viewHolderDT.txtmotadienthoai.setMaxLines(2);
+       // viewHolderDT.txtmotadienthoai.setText(sanpham.getMotasanpham());
+        //lay hinh anh tu mang
+        Picasso.get().load(sanpham.getHinhanhsanpham())
+                .placeholder(R.drawable.home)
+                .error(R.drawable.erro)
+                .into(viewHolderDT.imgdienthoai);
+        return view;
+    }
+
+    public void resetData() {
+        sanphamArrayList = arrSortSach;
+    }
+    public Filter getFilter() {
+        if (sachFilter == null)
+            sachFilter = new CustomFilter();
+
+        return sachFilter;
+    }
+
+    private class CustomFilter extends Filter {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            FilterResults results = new FilterResults();
+            // We implement here the filter logic
+            if (constraint == null || constraint.length() == 0) {
+                results.values = arrSortSach;
+                results.count = arrSortSach.size();
+            }
+            else {
+                List<Sanpham> lsSach = new ArrayList<Sanpham>();
+
+                for (Sanpham p : sanphamArrayList) {
+                    if (p.getTensanpham().toUpperCase().startsWith(constraint.toString().toUpperCase()))
+                        lsSach.add(p);
+                }
+
+                results.values = lsSach;
+                results.count = lsSach.size();
+
+            }
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint,
+                                      FilterResults results) {
+            if (results.count == 0)
+                notifyDataSetInvalidated();
+            else {
+                arrSortSach = (ArrayList<Sanpham>) results.values;
+                notifyDataSetChanged();
+            }
+
+        }
+
+    }
+}

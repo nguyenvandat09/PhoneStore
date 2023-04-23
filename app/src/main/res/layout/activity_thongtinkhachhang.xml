@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colortoolbar"
+    android:orientation="vertical"
+    tools:context=".activity.ThongTinKhachHang">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20sp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/boder"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/ttkhachhang"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfemail4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên Khách hàng"
+            app:startIconDrawable="@drawable/ic_baseline_person_outline_24"
+            android:layout_margin="15dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtenkh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfemail3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số Điện Thoại"
+            app:startIconDrawable="@drawable/ic_baseline_phone_24"
+            android:layout_margin="15dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edsdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mail"
+            app:startIconDrawable="@drawable/ic_baseline_mail_outline_24"
+          android:layout_margin="15dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfemail2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Địa chỉ"
+            app:startIconDrawable="@drawable/home"
+           android:layout_margin="15dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/eddc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btXN"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:padding="10dp"
+                android:text="@string/btxacnhan"
+                android:textSize="15sp"
+                android:background="@drawable/khunglogin"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="@null"/>
+
+            <Button
+                android:id="@+id/btTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/btback"
+                android:textSize="15sp"
+                android:background="@drawable/khunglogin"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="@null"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

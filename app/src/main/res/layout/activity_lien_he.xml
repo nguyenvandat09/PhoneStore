@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.LienHeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarlh"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colortoolbar"
+        app:title="Liên hệ"
+        app:titleTextColor="#fff"></androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        style="@style/Base.TextAppearance.AppCompat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/lienhe"
+        android:textSize="25dp" />
+    <TextView
+        style="@style/Base.TextAppearance.AppCompat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text=" Tổng đài hỗ trợ: 19001221"
+        android:textSize="25dp" />
+
+    <TextView
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/follow"
+        android:textColor="@color/colortoolbar"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/face"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20sp"
+                android:src="@drawable/icon_face" />
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:text="Facebook"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ig"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20sp"
+                android:src="@drawable/icon_insta" />
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:text="Instagram"
+                android:textSize="15sp"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/email"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="18sp"
+                android:src="@drawable/mail" />
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:layout_marginTop="5dp"
+                android:text="Email"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

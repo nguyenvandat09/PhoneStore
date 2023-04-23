@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7E8EC"
+    tools:context=".activity.LoginActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+
+
+            <TextView
+                android:id="@+id/dangNhap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="39dp"
+                android:layout_marginTop="10dp"
+                android:text="Đăng Nhập"
+                android:textColor="@color/colortoolbar"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvghichu1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dangNhap"
+                android:layout_marginLeft="39dp"
+                android:layout_marginTop="10dp"
+                android:text="Đăng nhập để tiếp tục"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvghichu1"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/vekhungnhap"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:drawablePadding="16dp"
+                android:hint="Username"
+                android:inputType="text"
+                android:paddingLeft="25dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="@color/colortoolbar"
+                android:textColorHint="@color/colortoolbar"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etUsername"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/vekhungnhap"
+                android:drawablePadding="16dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="25dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="@color/colortoolbar"
+                android:textColorHint="@color/colortoolbar"
+                android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+                android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+                android:textSize="14dp" />
+
+            <CheckBox
+                android:id="@+id/cbLuuThongTin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etPassword"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:buttonTint="@color/colortoolbar"
+                android:text="Nhớ mật khẩu"
+                android:textColor="@color/colortoolbar" />
+
+            <Button
+                android:id="@+id/btLogin"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cbLuuThongTin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/khunglogin"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="Đăng Nhập"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="@null" />
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btLogin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bạn chưa có tài khoản ? "
+                    android:textColor="#040404"/>
+
+                <TextView
+                    android:id="@+id/textDangKi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Đăng ký"
+                    android:textColor="@color/colortoolbar"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
